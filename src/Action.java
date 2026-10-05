@@ -10,7 +10,7 @@ public class Action {
 		Motor.B.setSpeed(SPEED); 
 		Motor.D.setSpeed(SPEED);
 		// Conversion de la distance en cm vers les degrés de rotation du moteur 
-		int degresMoteur = (int) Math.round((d / Math.PI*5.5) * 360.0); //pi*diamètre = circonference
+		int degresMoteur = (int) Math.round((d / (Math.PI * 5.5)) * 360.0); //pi*diamètre = circonference
 
 		// Le paramètre true indique à leJOS d'exécuter la commande en arrière-plan sans bloquer le programme, // ce qui permet de lancer Motor.D instantanément et de faire avancer les deux roues en parallèle. 
 		Motor.B.rotate(degresMoteur, true); 
