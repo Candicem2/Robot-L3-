@@ -38,7 +38,22 @@ public class Action {
 			Delay.msDelay(2000); 
 			compteurDeDegre+=angle;  //retenir les degres que le robot a tourné
 		}
-
+	public void tournerVers (int angle) {
+		if (angle > 180) {
+			angle = 360 -angle ;
+			int angleRoues = (int) Math.round(angle * 1.98);
+			// ajuste l'angle pour qu'il coresponde a quoi faire avec les roues
+			//1,98 vinet de distance entre les roues diviser par diamettre roue (plus un petit ajustament de chatGPT)
+			Motor.B.rotate(-angleRoues, true);
+			Motor.C.rotate(angleRoues);
+		}else {
+			int angleRoues = (int) Math.round(angle * 1.98);
+			// ajuste l'angle pour qu'il coresponde a quoi faire avec les roues
+			//1,98 vinet de distance entre les roues diviser par diamettre roue (plus un petit ajustament de chatGPT)
+			Motor.B.rotate(angleRoues, true);
+			Motor.C.rotate(-angleRoues);
+		}
+	}
 		//Une méthode qui permet au robot de tourner d'un angle donné en paramètres (en degrès), de manière 
 		//efficace, sans tourner d'un angle trop grand inutilement.
 		// Vérifié si le robot tourne bien vers la droite si ‘angle”<180 et gauche si ‘angle’ >180 !!!
