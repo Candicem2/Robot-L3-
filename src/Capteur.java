@@ -46,7 +46,19 @@ public class Capteur {
 
   
 
+	// ==========================================
+    // === PARTIE CAPTEUR DE SON              ===
+    // ==========================================
+public float distance() {
+		 SampleProvider distance = cs.getDistanceMode();
+		    float[] mesure = new float[1];
+		    distance.fetchSample(mesure, 0);
+		    return mesure[0];
+	}
 
+
+
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		 Capteur monCapteur = new Capteur();
