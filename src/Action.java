@@ -29,15 +29,6 @@ public class Action {
 	} 
 
 	
-	//Une méthode qui permet au robot de tourner d'un angle donné en paramètres vers la droite (en degrès).
-	//Vérifier si la vitesse peut être améliorée en tournant les 2 roues en même temps!!
-		public void tourner(float angle) {
-			Motor.C.setSpeed(SPEED);
-			int angleArr=(int) Math.round(1.98*angle); //arroundir un reel en entier(Math.round)
-			Motor.C.rotate(angleArr); 
-			Delay.msDelay(2000); 
-			compteurDeDegre+=angle;  //retenir les degres que le robot a tourné
-		}
 	public void tournerVers (int angle) {
 		if (angle > 180) {
 			angle = 360 -angle ;
@@ -54,24 +45,12 @@ public class Action {
 			Motor.C.rotate(-angleRoues);
 		}
 	}
-		//Une méthode qui permet au robot de tourner d'un angle donné en paramètres (en degrès), de manière 
-		//efficace, sans tourner d'un angle trop grand inutilement.
-		// Vérifié si le robot tourne bien vers la droite si ‘angle”<180 et gauche si ‘angle’ >180 !!!
-		public void efficaceTourner(float angle) {
-				if(angle<180) 
-					tourner(angle);
-				else  {
-					float invAngle=360-angle;
-					tourner(-invAngle);
-				}
-			}
 
 		// Méthode qui ferme la pince du robot
 
 		public void fermerPince() {
 				Motor.A.setSpeed(SPEED); 
 				Motor.A.backward(); 
-				pinceOuverte=false; // definir que la pince est fermé 
 				Delay.msDelay(3000);
 			}
 		
@@ -80,7 +59,6 @@ public class Action {
 		public void ouvrirPince() {
 				Motor.C.setSpeed(SPEED); 
 				Motor.C.forward(); 
-				pinceOuverte=true; // définir que la pince est ouverte
 				Delay.msDelay(3000);
 			}
 }
