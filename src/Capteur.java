@@ -6,7 +6,9 @@ import lejos.robotics.SampleProvider;
 
 public class Capteur {
 
-
+	// ==========================================
+    // === PARTIE CAPTEUR DE PRESSION         ===
+    // ==========================================
     // Représente la prise physique sur la brique EV3
     Port portPression;
 
