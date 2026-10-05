@@ -47,7 +47,7 @@ public class Capteur {
   
 
 	// ==========================================
-    // === PARTIE CAPTEUR DE SON              ===
+    // === PARTIE CAPTEUR DE distance         ===
     // ==========================================
 public float distance() {
 		 SampleProvider distance = cs.getDistanceMode();
