@@ -62,6 +62,12 @@ public float distance() {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		 Capteur monCapteur = new Capteur();
+		while (true) {
+			System.out.println(monCapteur.detecterPression());
+            
+            // Petite pause de 200 millisecondes pour ne pas saturer l'écran
+            lejos.utility.Delay.msDelay(200); 
+		}
 	}
 
-}
+
